@@ -9,6 +9,7 @@ TagManager:
   - Pinwheel
   - MapEdge
   - bullet
+  - Gold
   layers:
   - Default
   - TransparentFX

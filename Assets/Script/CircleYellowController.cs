@@ -16,7 +16,7 @@ public class CircleYellowController : MonoBehaviour
     {
         Vector3 movement = new Vector3(0f, direction, 0f);
         transform.Translate(movement * moveSpeed * Time.deltaTime);
-        if (transform.position.y > 1.4f || transform.position.y < -1.4f)
+        if (transform.position.y > 1.0f || transform.position.y < -1.0f)
         {
             direction *= -1;
         }

@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66110eceff37b7b4c8aa7de10bbfe32c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Yellow: {fileID: 3885735314272946484, guid: 8fa08c6f13c2f3848a47aba9421cfec5, type: 3}
   rotationSpeed: 10000
 --- !u!60 &4690923367589553999
 PolygonCollider2D:

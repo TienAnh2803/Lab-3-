@@ -14,9 +14,9 @@ public class SquareController : MonoBehaviour
     public GameObject bulletPrefab;
     public float bulletSpeed = 10f;
     private Vector2 shootDirection;
+    public PlayerData playerData;
     private Quaternion bulletDirection;
     public Transform spawn;
-
     void Start()
     {
         StartCoroutine(Countdown());
@@ -70,6 +70,9 @@ public class SquareController : MonoBehaviour
     }
     public void LoadNextSence()
     {
+        playerData.playerLevel++;
+        PlayerPrefs.SetInt("PlayerLevel", playerData.playerLevel);
+        PlayerPrefs.SetInt("PlayerScore", playerData.playerScore);
         int currentSenceIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSenceIndex + 1);
     }
@@ -77,7 +80,7 @@ public class SquareController : MonoBehaviour
     {
         if (col.gameObject.tag.Equals("Circle"))
         {
-            Debug.Log("xxxx");
+            Debug.Log("xxxx");  
             transform.position = spawn.position;
         }
         if (col.gameObject.name.Equals("Box"))
@@ -85,7 +88,7 @@ public class SquareController : MonoBehaviour
             Debug.Log("Win");
             LoadNextSence();
         }
-        if (col.gameObject.name.Equals("Pinwheel"))
+        if (col.gameObject.tag.Equals("Pinwheel"))
         {
             Debug.Log("xxx");
             Vector2 Position = new Vector2(-7, 1);
@@ -111,7 +114,6 @@ public class SquareController : MonoBehaviour
             bulletRb.velocity = shootDirection * bulletSpeed;  // Bắn theo hướng "up" của GameObject
             bulletTf.rotation = bulletDirection;
         }
-
     }
 }
 
